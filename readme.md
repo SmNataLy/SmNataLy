@@ -6,9 +6,4 @@
 
 #### Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее
 
-[блок-схема](Homework1\diagram.drawio.png)
-
-/ [код](Homework1\Program.cs)
-
-[код](Example003_Sum\Program.cs)
-ы
+[блок-схема](Homework1/diagram.drawio.png) / [код](Homework1/Program.cs)
