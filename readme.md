@@ -9,3 +9,6 @@
 [блок-схема](Homework1\diagram.drawio.png)
 
 / [код](Homework1\Program.cs)
+
+[код](Example003_Sum\Program.cs)
+ы
