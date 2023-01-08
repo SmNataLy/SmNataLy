@@ -31,4 +31,4 @@
 
 #### Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
 
-[блок-схема](Homework3/diagram.drawio.png) / [код](Homework4/Program.cs)
+[блок-схема](Homework4/diagram.drawio.png) / [код](Homework4/Program.cs)
