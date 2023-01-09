@@ -12,20 +12,7 @@ while (index < n)
     if(array[index] == find)
     {
         Console.WriteLine(index);
-        break;
+        //break;
     }
     index ++;
 }
-//     
-//int[] array = new int[3];
-//void FillArray(int[] collection);
-//{
-    //int length = collection.length;
-    //int index = 0;
-    //while (index < length)
-    //{
-       // collection[index] = newRandom().Next(1,10);
-       // index ++;
-   // }
-//}
-// void PrintArray(int[]col)
