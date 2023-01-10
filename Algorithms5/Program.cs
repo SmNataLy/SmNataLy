@@ -17,5 +17,3 @@ else
 }
 
 
-
-//Console.WriteLine(number);
