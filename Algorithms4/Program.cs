@@ -8,7 +8,7 @@
 
 //Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
-Console.Write("Ведите число: ");
+Console.Write("Ведите трехзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 int secondDigit = number / 10 % 10;
