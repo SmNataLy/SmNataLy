@@ -41,7 +41,11 @@ void PrintArray(int[] col)
     }
 }
 
+int[] array = new int[size];
 
+FillArray(array); //метод - кот-ый заполняет массива
+
+PrintArray(array); //метод - кот-ый печатает массива
 
 // void FillArray(int[] collection)
 // {
