@@ -47,7 +47,7 @@ array[6] = 6;
 PrintArray(array); //метод - кот-ый печатает массива
 Console.WriteLine(); //проверка что не яв-ся частью вывода массива
 
-int pos = IndexOf(array, 10);
+int pos = IndexOf(array, 6);
 Console.WriteLine(pos);
 
 // void метод - ничего не возвращает
