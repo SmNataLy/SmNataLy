@@ -5,103 +5,89 @@
 // [1,0,1,1,0,1,0,0]
 // Реализовать перевод двоичного числа в десятичное
 
-
-//1. Ввод N
-//int <- (string)
+// 1. Ввод N
+// int <- (string)
 static int GetNumberByUser(string text)
 {
-    Console.Write(text + ": ");
+    Console.Write(text + " ");
     return Convert.ToInt32(Console.ReadLine());
 }
-int size = GetNumberByUser("введите N");
+int size = GetNumberByUser("введите N: ");
 
 // 2. Создание массива
+// 
+int[] CreateArray(int size)
+{
+    int[] array = new int[size];
+    return array;
+}
+
+int[] array = CreateArray(size);
+
+// 3. Заполнение массива 0 и 1
+// void <- (int[])
 
 
 void FillArray(int[] collection)
 {
     int length = collection.Length; //длинна массива
     int index = 0;
+    
     while (index < length)
     {
-        collection[index] = new Random().Next(0, 2);
+        collection[index] = new Random().Next(2);
         index++;
     }
+    collection[0] = 1; // Самое левое число != 0
 }
+// 4. Печать массива
+// string <- (int[])
 
-
-void PrintArray(int[] col)
+string PrintArray(int[] array)
 {
-    int count = col.Length;
-    int position = 0;
-    while (position < count)
+    string output = String.Empty;
+    int count = array.Length;
+
+    for (int i = 0; i < count; i++)
     {
-        Console.WriteLine(col[position]);
-        position++;
+        output=output + $"{array[i]} ";
     }
+    return output;
 }
 
-int[] array = new int[size];
+// // 5. Конвертация из 2-ого в 10-ое
+// // int <- (int[])
+
+// 76543210
+// 10110100 = 1*2^7 + 0*2^6 + 1*2^5 + 1*2^4 + 0*2^3 + 1*2^2 + 0*2^1 + 0*2^0
+
+int Conversion(int[] arrayBin)
+{
+    int count = arrayBin.Length;
+    int exponent = arrayBin.Length - 1;
+    int result = 0;
+    for (int i = 0; i < arrayBin.Length; i++)
+    {
+        if (arrayBin[i] == 1)
+        {
+            result += Convert.ToInt32(Math.Pow(2, exponent));
+        }
+        exponent--;
+    }
+    return result;
+}
+
+// 6. 10110100 >> 180
+// string <- (int[] , int)
+string GoodPrint(int[] bin, int dec)
+{
+return $"{String.Join("", bin)} >> {dec}";
+}
+
+//int size = GetNumberByUser("введите N");
 
 FillArray(array); //метод - кот-ый заполняет массива
-
-PrintArray(array); //метод - кот-ый печатает массива
-
-// void FillArray(int[] collection)
-// {
-//     int length = size; //длинна массива
-//     int index = 0;
-//     while (index < length)
-//     {
-//         collection[index] = new Random().Next(1, 10);
-//         index++;
-//     }
-// }
-// Console.WriteLine(collection[index]);
-
-
-// int[] array = new int[10];
-// 2. Создание массива
-// int[] <- (int)
-
-
-// static void Main()
-// {
-//     int n = 0, a = 0, b = 0;
-//     int[] arr = null;
-
-//     Console.Write("Введите n - размер массива arr (n > 1): ");
-//     n = Int32.Parse(Console.ReadLine());
-//     while (n < 2)
-//     {
-//         Console.WriteLine("Ошибка: значение n должно быть больше 1!");
-//         Console.Write("Повторите ввод: ");
-//         n = Int32.Parse(Console.ReadLine());
-//     }
-
-//     Console.Write("Введите a - левую границу промежутка для заполнения нулями (a < n): ");
-//     a = Int32.Parse(Console.ReadLine());
-//     while (a <= 0 || a >= n)
-//     {
-//         Console.WriteLine("Ошибка: значение a должно быть больше 0 и меньше n!");
-//         Console.Write("Повторите ввод: ");
-//         a = Int32.Parse(Console.ReadLine());
-//     }
-
-//     Console.Write($"Введите b - правую границу промежутка для заполнения нулями (b > a и b <= n): ");
-//     b = Int32.Parse(Console.ReadLine());
-//     while (b <= a || b > n)
-//     {
-//         Console.WriteLine($"Ошибка: значение b должно быть больше a и меньше или равно n!");
-//         Console.Write("Повторите ввод: ");
-//         b = Int32.Parse(Console.ReadLine());
-//     }
-
-//     arr = new int[n];
-//     Console.Write("Полученный массив arr: ");
-//     for (int i = 0; i < arr.Length; i++)
-//         arr[i] = Convert.ToInt32(!((i + 1 > a) && (i + 1 < b)));
-//     Console.WriteLine(String.Join(", ", arr));
-
-//     Console.ReadKey(true);
-// }
+int result = Conversion(array);
+string binPrint = PrintArray(array); //метод - кот-ый печатает массива
+Console.WriteLine(binPrint);
+Console.WriteLine(GoodPrint(array, result));
