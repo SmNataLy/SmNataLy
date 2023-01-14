@@ -28,7 +28,6 @@ void FillArray(int[] collection)
         index++;
     }
 }
-FillArray(array);
 
 void PrintArray(int[] array)
 {
@@ -41,25 +40,19 @@ void PrintArray(int[] array)
     Console.WriteLine();
 }
 
-void SelectionSort(int[] array)
+void ProductPairsNum(int[] array)
 {
-    for (int i = 0; i < array.Length; i++)
+    int[] result = new int[array.Length / 2];
+    for (int i = 0; i < array.Length / 2; i++)
     {
-        int onePosition = i;
-
-        for (int j = 0; j < array.Length / 2; j++)
-        {
-            res[j] = array[i] * array[array.Length - 1 - i];
-            onePosition = j;
-        }
-
-        int temporrary = array[i];
-        array[i] = array[onePosition];
-        array[onePosition] = temporrary;
+        result[i] = array[i] * array[array.Length - 1 - i];
+        Console.Write($"{result[i]} ");
     }
+    Console.WriteLine();
 }
 
+FillArray(array);
 PrintArray(array);
-SelectionSort(array);
+ProductPairsNum(array);
 
-PrintArray(array);
+
