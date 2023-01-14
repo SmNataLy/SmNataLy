@@ -40,28 +40,26 @@ void PrintArray(int[] array)
     }
     Console.WriteLine();
 }
-PrintArray(array);
 
-void ProductPairsNum(int[] array)
+void SelectionSort(int[] array)
 {
-
     for (int i = 0; i < array.Length; i++)
     {
-        int resulr = i;
+        int onePosition = i;
+
         for (int j = 0; j < array.Length / 2; j++)
         {
-            resulr = resulr + array[i] * array[array.Length - 1 - i];
+            res[j] = array[i] * array[array.Length - 1 - i];
+            onePosition = j;
         }
 
         int temporrary = array[i];
-        array[i] = array[resulr];
-        array[resulr] = temporrary;
+        array[i] = array[onePosition];
+        array[onePosition] = temporrary;
     }
 }
 
-ProductPairsNum(array);
 PrintArray(array);
+SelectionSort(array);
 
-
-
-
+PrintArray(array);
