@@ -1,4 +1,8 @@
-﻿// 1. Ввод длинны массива М
+﻿// Пользователь вводит с клавиатуры M чисел.
+// Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
+
+// 1. Ввод длинны массива М
 
 int GetNumberByUser(string text)
 {
@@ -19,30 +23,24 @@ void FillArray(int[] collection)
     }    
 }
 
-// 4. Печать массива
-
-void PrintArray(int[] array)
+int CountNumbers(int[] arraySource)
 {
-    int count = array.Length;
-
-    for (int i = 0; i < count; i++)
+    int result = 0;
+    for (int i = 0; i < arraySource.Length; i++)
     {
-        Console.Write($"{array[i]} ");
+        if (arraySource[i] > 0)
+        {
+            result = result + 1;
+        }
     }
-    Console.WriteLine();
+    return result;
 }
 
 int size = GetNumberByUser("Введите длинну массива М: ");
 int[] array = new int[size];
-
 FillArray(array);
-PrintArray(array);
-
-
-
-
-
-
+int result = CountNumbers(array);
+Console.WriteLine(result);
 
 
 
