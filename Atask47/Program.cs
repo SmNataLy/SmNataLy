@@ -1,30 +1,32 @@
-﻿
+﻿// Задайте двумерный массив размером m×n,
+// заполненный случайными вещественными числами.
 
-int GetNumberByUser(string text)
-{
-    Console.Write(text + " ");
-    return Convert.ToInt32(Console.ReadLine());
-}
 
-int CountNumbers(int[] collection)
+Random rnd = new Random();
+void PrintArray(double[,] matrix)
 {
-  
-    int result = 0;
-    for (int i = 0; i < collection.Length; i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        Console.WriteLine("Введите элемент {0}: ", i + 1);
-        int num = Convert.ToInt32(Console.ReadLine());
-        if (num > 0)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            result = result + 1;
+            Console.Write($"{matrix[i, j]}  ");
         }
-        
+        Console.WriteLine();
     }
-    return result;
 }
 
-int size = GetNumberByUser("Введите длинну массива М: ");
-int[] array = new int[size];
-int result = CountNumbers(array);
-Console.WriteLine(result);
+void FillArray(double[,] matrix)
+{
+    
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = Convert.ToDouble(rnd.Next(-20, 70)/10.0);;
+        }
+    }
+}
 
+double[,] matr = new double[3, 4];
+FillArray (matr);
+PrintArray (matr);
