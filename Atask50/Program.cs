@@ -7,13 +7,17 @@ int[,] matrix = new int[3, 4] {{1, 4, 7, 2},
                                {8, 4, 2, 4}};
 
 
-Console.WriteLine("Введите координаты");
+Console.WriteLine("Введите позиции элемента: ");
 int m = Convert.ToInt32(Console.ReadLine());
 int n = Convert.ToInt32(Console.ReadLine());
-if (m > 3-1 && n > 4-1)
-    Console.WriteLine("Такого числа нет");
-else
+
+if (m < matrix.GetLength(0))
 {
-    object number = matrix.GetValue(m, n);
-    Console.WriteLine(number);
+    if ( n < matrix.GetLength(1))
+    {
+        object number = matrix.GetValue(m, n);
+        Console.WriteLine(number);
+    }
+    else
+        Console.WriteLine("Такого числа нет");
 }
