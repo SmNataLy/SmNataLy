@@ -21,3 +21,5 @@ if (m < matrix.GetLength(0))
     else
         Console.WriteLine("Такого числа нет");
 }
+else
+        Console.WriteLine("Такого числа нет");
