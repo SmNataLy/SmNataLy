@@ -11,15 +11,10 @@ Console.WriteLine("Введите позиции элемента: ");
 int m = Convert.ToInt32(Console.ReadLine());
 int n = Convert.ToInt32(Console.ReadLine());
 
-if (m < matrix.GetLength(0))
+if (m < matrix.GetLength(0) && n < matrix.GetLength(1))
 {
-    if ( n < matrix.GetLength(1))
-    {
-        object number = matrix.GetValue(m, n);
-        Console.WriteLine(number);
-    }
-    else
-        Console.WriteLine("Такого числа нет");
+    int number = matrix[m, n];
+    Console.WriteLine(number);
 }
 else
-        Console.WriteLine("Такого числа нет");
+    Console.WriteLine("Такого числа нет");
