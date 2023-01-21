@@ -6,8 +6,8 @@ int GetNumberByUser(string text)
     Console.Write(text + " ");
     return Convert.ToInt32(Console.ReadLine());
 }
-int firstNum = GetNumberByUser("Bведите значение N: ");
 
+int firstNum = GetNumberByUser("Bведите значение N: ");
 int lastNum = 1;
 string NumbersRec(int lastNum, int firstNum)
 {
